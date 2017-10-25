@@ -1,0 +1,38 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>To Do List</title>
+    <link rel="stylesheet" href="../public/style.css">
+  </head>
+  <body>
+    <header>
+      <h1>Stuff I Gotta Do</h1>
+    </header>
+    <div class="entryform">
+      <form class="" action="/" method="post">
+        <input type="text" name="task" placeholder="add a task">
+        <button type="submit" name="button">Add to List</button>
+      </form>
+    </div>
+    <div class="container">
+      <h3>My "To Do" List</h3>
+        {{#todos}}
+          {{^complete}}
+            <ul>
+              <li>{{task}} <a href="/complete/{{id}}" >  Complete  </a></li>
+            </ul>
+          {{/complete}}
+        {{/todos}}
+      <h3>My "Done" List</h3>
+      {{#todos}}
+        {{#complete}}
+          <ul>
+            <li>{{task}}</li>
+          </ul>
+        {{/complete}}
+      {{/todos}}
+    </div>
+  </body>
+</html>
